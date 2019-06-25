@@ -1,4 +1,7 @@
 # Advertise Canvas
+
+## Connect to Metamask
+
  ```
  async function connectMetamask(){
 
@@ -52,3 +55,21 @@
 }
 
  ```
+## Connect with Chrome Extension
+
+```
+    var laserExtensionId = "oapeiebamdabkniagfepfndnachjoieg";
+
+    var weibal = Number(document.getElementById('weiprice').value);
+    var weitoether = weibal / 1000000000000000000;
+    var SMB = document.getElementById('span_address').innerHTML;
+    var inputhex = document.getElementById('span_inputhex').innerHTML;
+    inputhex = inputhex.replace('0x','');
+    SMB = SMB.replace('0x','');
+    var sendtrdetails = [SMB,weitoether,inputhex];
+
+    chrome.runtime.sendMessage(laserExtensionId, sendtrdetails,
+    function(response) {
+      
+    });
+```
